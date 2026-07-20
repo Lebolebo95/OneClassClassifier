@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "OneClassClassifier"
+version = "0.1.0"
+description = "SIMCA one-class classifier, scikit-learn compatible"
+requires-python = ">=3.9"
+dependencies = [
+    "numpy",
+    "scipy",
+    "scikit-learn",
+]
+
+[project.optional-dependencies]
+plot = ["plotly"]
+
+[tool.setuptools]
+# The package root doubles as the repo root (no src/ layout), so map the
+# "OneClassClassifier" package explicitly onto ".".
+package-dir = {"OneClassClassifier" = "."}
+packages = ["OneClassClassifier", "OneClassClassifier.models"]
